@@ -1,35 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
-
-/*
-selector {
-    property: value;
-    property2: value2;
-}
-*/
+@import url('https://fonts.googleapis.com/css2?family=Fruktur&family=Signika+Negative:wght@400;700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
 }
 
-
 :root {
-    font-family: 'DotGothic16', sans-serif;;
-}
-
-h1 {
-    text-transform: uppercase;
-    margin: 0;
-    text-align: center;
-}
-
-.logo {
-    text-transform: uppercase;
+    --main-color: black;
+    --accent-color: rgb(82, 165, 238);
+    --highlight-color: red;
+    font-family: 'Fruktur', cursive;
 }
 
 img {
-    width: 100%;
     display: block;
+    width: 100%;
+}
+
+.logo {
+    color: var(--highlight-color);
+    border: 10px solid var(--accent-color);
+    text-align: center;
+}
+
+.menu {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    border: 10px solid var(--accent-color);
+    color: var(--main-color);
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.menu a:hover {
+    text-decoration: underline;
 }
 
 header .banner {
@@ -37,33 +48,19 @@ header .banner {
     background-size: cover;
     background-position: center;
     min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
 }
 
-header nav .menu a:hover {
-    font-weight: bold;
+header .banner h1 {
+    font-family: 'Signika Negative', sans-serif;
 }
 
-.hello {
-    text-align: center;
-    display: block;
-    margin-top: -100px;
-    font-size: 2rem;
-    color: bisque;
+main div.products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
-#products {
-    color: red;
-}
-
-.products-header {
-    color: green;
-}
-
-
-p::first-letter {
-    font-size: 3rem;
+@media (min-width: 800px) {
+    main div.products {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }
